@@ -25,3 +25,8 @@
 .counter.red {
   color: red;
 }
+
+.new-tweet div.alert {
+  color: red;
+  margin-top: 5px;
+}

@@ -21,3 +21,29 @@
   line-height: 80px;
   padding-left: 10px;
 }
+
+#nav-bar .compose {
+  font-size: 120%;
+  border: 1px solid #244751;
+  margin: 10px 0px;
+  background-color: white;
+  border-radius: 5px;
+  height: 60px;
+  padding: 0px 10px;
+  float: right;
+  color: #00a087;
+  opacity: 0.80;
+}
+
+#nav-bar .compose:hover {
+  opacity: 1.00;
+  color: #244751;
+}
+
+#nav-bar i {
+  padding-right: 5px;
+}
+
+#nav-bar *{
+  display: inline-block;
+}
