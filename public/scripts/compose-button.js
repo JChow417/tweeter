@@ -1,4 +1,5 @@
-$(document).ready(function(){
+function composeButton() {
+
   var button = document.querySelector('button.compose')
   button.addEventListener('click', function(event) {
     console.log('YOYO');
@@ -7,4 +8,4 @@ $(document).ready(function(){
     });
   });
 
-});
+}
