@@ -64,4 +64,5 @@ article.tweet:hover footer i {
 
 article.tweet p {
   margin: 40px 15px;
+  overflow-wrap: break-word;
 }

@@ -19,7 +19,7 @@ $(document).ready(function() {
     $button.on('submit', function() {
       event.preventDefault();
       console.log('Button clicked, performing ajax call...');
-      var text = $("textarea[name='text']").val();
+      var text = $(this).find('textarea').val();
 
       if(text.length <= charLimit && text !== "" && text !== null) {
         $.ajax({
