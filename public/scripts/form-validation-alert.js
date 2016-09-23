@@ -1,17 +1,36 @@
-function removeAlert() {
-  $('.new-tweet div.alert').remove();
+function removeAlert(alertCounter) {
+  setTimeout(()=>{
+    $('.new-tweet div.alert.' + alertCounter).remove();
+  }, 2000);
 }
 
-
-function showAlert(text) {
-  var $newTweet = $('.new-tweet');
-    removeAlert();
+function selectAlertMessage(text) {
   var alertMessage;
   if(text.length > charLimit) {
-    alertMessage = `You have exceed the ${charLimit} character Limit`;
-  } else {
-    alertMessage = "You have entered a blank tweet";
-  }
-  var alertElement = $('<div>').addClass('alert').text(alertMessage);
-  $newTweet.append(alertElement);
+      alertMessage = `You have exceed the ${charLimit} character Limit`;
+    } else {
+      alertMessage = "You have entered a blank tweet";
+    }
+  return alertMessage;
 }
+
+var showAlert = ((text) => {
+//var showAlert = (function(text) {
+  var alertCounter = 0;
+
+  return (text) => {
+    alertCounter += 1;
+    //return function(text) {
+
+    var $newTweet = $('.new-tweet');
+    $newTweet.find('div.alert').remove();
+
+    var alertMessage = selectAlertMessage(text);
+
+    var alertElement = $('<div>').addClass('alert ' + alertCounter).text(alertMessage);
+    $newTweet.append(alertElement);
+    removeAlert(alertCounter);
+
+  };
+
+})();

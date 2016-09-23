@@ -9,7 +9,6 @@ var charLimit = 140;
 function resetNewTweet(that){
   that.reset();
   $(that).children('span.counter').text(charLimit);
-  removeAlert();
 };
 
 $(document).ready(function() {
@@ -21,7 +20,7 @@ $(document).ready(function() {
 
   $(function createNewTweet() {
     var $button = $('.new-tweet form');
-    $button.on('submit', function() {
+    $button.on('submit', function(event) {
       event.preventDefault();
       console.log('Button clicked, performing ajax call...');
       var text = $(this).find('textarea').val();
