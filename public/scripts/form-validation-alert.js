@@ -19,8 +19,8 @@ var showAlert = ((text) => {
   var alertCounter = 0;
 
   return (text) => {
+  //return function(text) {
     alertCounter += 1;
-    //return function(text) {
 
     var $newTweet = $('.new-tweet');
     $newTweet.find('div.alert').remove();
@@ -30,7 +30,6 @@ var showAlert = ((text) => {
     var alertElement = $('<div>').addClass('alert ' + alertCounter).text(alertMessage);
     $newTweet.append(alertElement);
     removeAlert(alertCounter);
-
   };
 
 })();
