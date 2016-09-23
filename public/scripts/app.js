@@ -14,6 +14,11 @@ function resetNewTweet(that){
 
 $(document).ready(function() {
 
+  //event delegation
+  $('section#tweets-container').on('click', 'article.tweet', function() {
+    alert('Tweet, Tweet!');
+  });
+
   $(function createNewTweet() {
     var $button = $('.new-tweet form');
     $button.on('submit', function() {
