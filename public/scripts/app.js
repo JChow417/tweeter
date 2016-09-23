@@ -26,7 +26,7 @@ $(document).ready(function() {
       console.log('Button clicked, performing ajax call...');
       var text = $(this).find('textarea').val();
 
-      if(text.length <= charLimit && text !== "" && text !== null) {
+      if(text.length <= charLimit && (/[^\s]/).test(text) && text !== null) {
         $.ajax({
           url: '/tweets',
           method: 'POST',
